@@ -1,0 +1,31 @@
+﻿@model InstructorEditViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">Edit an Instructor</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Name" asp-for="Name">
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Profession" asp-for="Profession">
+            <span class="text-danger" asp-validation-for="Profession"></span>
+        </div>
+        <div class="form-group">
+            <label for="Photo">Insert Instructor's Photo</label>
+            <input type="file" class="form-control-file" accept="image/*" id="Photo" asp-for="ImageFile">
+            <span class="text-danger" asp-validation-for="ImageFile"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a class="btn btn-primary" asp-action="Index" asp-controller="Instructors">Return to Index</a>
+    </form>
+
+</div>
+<!-- /.container-fluid -->
